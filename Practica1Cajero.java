@@ -2,7 +2,6 @@ import java.util.Scanner;
 public class Practica1Cajero {
     public static void main(String[] args) {
         UsuarioManejo obj = new UsuarioManejo();
-        String[] nombres = {"Juan", "Maria"};
         System.out.println("=== Bienvenido al Cajero ===");
         obj.sesion();
         try
