@@ -2,16 +2,13 @@ import java.util.Scanner;
 
 public class Practica1Cajero {
     public static void main(String[] args) {
+        UsuarioManejo obj = new UsuarioManejo();
         Scanner scanner = new Scanner(System.in);
         String[] usuarios = {"1234", "5678"};
         String[] nombres = {"Juan", "Maria"};
-        double[] saldos = {1000.0, 2500.0};
         int intentos = 0;
-        boolean salir = false;
         int usuarioActual = -1;
-
         System.out.println("=== Bienvenido al Cajero ===");
-
         while (intentos < 3 && usuarioActual == -1) {
             System.out.print("Ingrese su PIN: ");
             String pin = scanner.nextLine();
@@ -25,16 +22,26 @@ public class Practica1Cajero {
                 System.out.println("PIN incorrecto.");
                 intentos++;
             }
+            if (intentos == 3)
+            {
+                System.out.println("NI MAIZ ADIOS");
+                return;
+            }
         }
-
-        if (usuarioActual == -1) {
-            System.out.println("Demasiados intentos fallidos. Adiós.");
-            return;
-        }
-
         System.out.println("Bienvenido, " + nombres[usuarioActual]);
-
-        while (!salir) {
+        obj.interfaz();
+    }
+}
+class UsuarioManejo
+{
+    boolean salir = false;
+    int usuarioActual;
+    Scanner scanner = new Scanner(System.in);
+    double[] saldos = {1000.0, 2500.0};
+    public void interfaz()
+    {
+        while(!salir)
+        {
             System.out.println("\n1. Ver saldo");
             System.out.println("2. Retirar dinero");
             System.out.println("3. Depositar dinero");
@@ -42,7 +49,6 @@ public class Practica1Cajero {
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
             scanner.nextLine(); // limpiar buffer
-
             if (opcion == 1) {
                 System.out.println("Su saldo es: $" + saldos[usuarioActual]);
             } else if (opcion == 2) {
