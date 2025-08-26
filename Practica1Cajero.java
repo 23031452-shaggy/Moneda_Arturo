@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.util.Stack;
 public class Practica1Cajero {
     public static void main(String[] args) {
         UsuarioManejo obj = new UsuarioManejo();
@@ -16,6 +17,8 @@ public class Practica1Cajero {
 }
 class UsuarioManejo
 {
+    Stack pila = new Stack();
+    Stack copia = new Stack();
     int intentos = 0;
     int usuarioActual = -1;
     String[] usuarios = {"1234", "5678"};
@@ -31,6 +34,7 @@ class UsuarioManejo
             System.out.println("2. Retirar dinero");
             System.out.println("3. Depositar dinero");
             System.out.println("4. Salir");
+            System.out.println("5 mostrar historial");
             System.out.print("Seleccione una opción: ");
             int opcion = scanner.nextInt();
             scanner.nextLine(); // limpiar buffer
@@ -41,6 +45,7 @@ class UsuarioManejo
                 double retiro = scanner.nextDouble();
                 if (retiro <= saldos[usuarioActual]) {
                     saldos[usuarioActual] -= retiro;
+                    pila.push("Retiro de " + retiro);
                     System.out.println("Retiro exitoso. Nuevo saldo: $" + saldos[usuarioActual]);
                 } else {
                     System.out.println("Fondos insuficientes.");
@@ -48,11 +53,15 @@ class UsuarioManejo
             } else if (opcion == 3) {
                 System.out.print("Ingrese cantidad a depositar: ");
                 double deposito = scanner.nextDouble();
+                pila.push("deposito de " + deposito);
                 saldos[usuarioActual] += deposito;
                 System.out.println("Depósito exitoso. Nuevo saldo: $" + saldos[usuarioActual]);
             } else if (opcion == 4) {
                 salir = true;
                 System.out.println("Gracias por usar el cajero.");
+            } else if (opcion == 5) {
+                System.out.println("este es tu historial de movimientos");
+                System.out.println(pila.clone());
             } else {
                 System.out.println("Opción inválida.");
             }
