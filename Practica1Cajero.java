@@ -1,41 +1,27 @@
 import java.util.Scanner;
-
 public class Practica1Cajero {
     public static void main(String[] args) {
         UsuarioManejo obj = new UsuarioManejo();
-        Scanner scanner = new Scanner(System.in);
-        String[] usuarios = {"1234", "5678"};
         String[] nombres = {"Juan", "Maria"};
-        int intentos = 0;
-        int usuarioActual = -1;
         System.out.println("=== Bienvenido al Cajero ===");
-        while (intentos < 3 && usuarioActual == -1) {
-            System.out.print("Ingrese su PIN: ");
-            String pin = scanner.nextLine();
-            for (int i = 0; i < usuarios.length; i++) {
-                if (usuarios[i].equals(pin)) {
-                    usuarioActual = i;
-                    break;
-                }
-            }
-            if (usuarioActual == -1) {
-                System.out.println("PIN incorrecto.");
-                intentos++;
-            }
-            if (intentos == 3)
-            {
-                System.out.println("NI MAIZ ADIOS");
-                return;
-            }
+        obj.sesion();
+        try
+        {
+            System.out.println("Bienvenido, " + obj.nombres[obj.usuarioActual]);
+        }catch (java.lang.ArrayIndexOutOfBoundsException e)
+        {
+            return;
         }
-        System.out.println("Bienvenido, " + nombres[usuarioActual]);
         obj.interfaz();
     }
 }
 class UsuarioManejo
 {
+    int intentos = 0;
+    int usuarioActual = -1;
+    String[] usuarios = {"1234", "5678"};
+    String[] nombres = {"Juan", "Maria"};
     boolean salir = false;
-    int usuarioActual;
     Scanner scanner = new Scanner(System.in);
     double[] saldos = {1000.0, 2500.0};
     public void interfaz()
@@ -70,6 +56,28 @@ class UsuarioManejo
                 System.out.println("Gracias por usar el cajero.");
             } else {
                 System.out.println("Opción inválida.");
+            }
+        }
+    }
+    public void sesion()
+    {
+        while (intentos < 3 && usuarioActual == -1) {
+            System.out.print("Ingrese su PIN: ");
+            String pin = scanner.nextLine();
+            for (int i = 0; i < usuarios.length; i++) {
+                if (usuarios[i].equals(pin)) {
+                    usuarioActual = i;
+                    break;
+                }
+            }
+            if (usuarioActual == -1) {
+                System.out.println("PIN incorrecto.");
+                intentos++;
+            }
+            if (intentos == 3)
+            {
+                System.out.println("USUARIO NO AUTORIZADO, CERRANDO PROGRAMA");
+                return;
             }
         }
     }
