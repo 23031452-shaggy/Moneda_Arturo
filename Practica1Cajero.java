@@ -18,7 +18,6 @@ public class Practica1Cajero {
 class UsuarioManejo
 {
     Stack pila = new Stack();
-    Stack copia = new Stack();
     int intentos = 0;
     int usuarioActual = -1;
     String[] usuarios = {"1234", "5678"};

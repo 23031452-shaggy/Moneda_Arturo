@@ -55,12 +55,11 @@ public class Coins
                 dinero.pop();
             }
         }
-        if (lana >= (cont1) + (cont2 * 2) + (cont5 * 5) + (cont10 * 10) + (cont20 * 20) + (cont50 * 50) + (cont100 * 100) + (cont200 * 200) + (cont500 * 500)) {
+        if (lana >= ((cont1) + (cont2 * 2) + (cont5 * 5) + (cont10 * 10) + (cont20 * 20) + (cont50 * 50) + (cont100 * 100) + (cont200 * 200) + (cont500 * 500))) {
             System.out.println("NO CUENTAS CON FONDOS SUFICIENTES");
         } else {
             System.out.println("fueron " + cont500 + " de 500, " + cont200 + " de 200, " + cont100 + " de 100, "
                     + cont50 + " de 50, " + cont20 + " de 20, " + cont10 + " de 10, " + cont5 + " de 5, " + cont2 + " de 2 y " + cont1 + " de 1");
-
         }
     }
     public void LlenarPila(int a)
