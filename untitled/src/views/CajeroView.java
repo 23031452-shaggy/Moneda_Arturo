@@ -32,6 +32,7 @@ public class CajeroView
         System.out.println("3.- Depositar");
         System.out.println("4.- Transferir");
         System.out.println("5.- Historial de movimientos");
+        System.out.println("6.- Cambiar NIP");
         //Tarea: Definir opciones restantes COMPLETO?
         System.out.println("9.- salir");
     }
@@ -67,14 +68,6 @@ public class CajeroView
     public void mostrarMensaje(String mensaje)
     {
         System.out.println("====== " + mensaje);
-    }
-    public void error(String operacion)
-    {
-        mostrarMensaje("Hubo un error en " + operacion);
-    }
-    public void exito(String operacion)
-    {
-        mostrarMensaje(operacion + " Realizada con exito");
     }
     public boolean salir()
     {
