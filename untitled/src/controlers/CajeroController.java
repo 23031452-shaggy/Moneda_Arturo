@@ -58,9 +58,10 @@ public class CajeroController
                     realizarTransferencia();
                     break;
                 case 5:
-                    //Cambiar NIP
+                    cambiarNIP();
                     break;
-                case 9:
+                case 6:
+                    salir();
                     break;
                 default:
                     break;
@@ -123,5 +124,13 @@ public class CajeroController
         {
             view.mostrarMensaje("Error en el proceso de transferencia");
         }
+    }
+    public void salir()
+    {
+        view.salir();
+    }
+    public void cambiarNIP()
+    {
+        model.CambiarNIP(view.solicitarPin());
     }
 }

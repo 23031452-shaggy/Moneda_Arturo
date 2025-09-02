@@ -32,7 +32,6 @@ public class CajeroView
         System.out.println("3.- Depositar");
         System.out.println("4.- Transferir");
         System.out.println("5.- Cambiar NIP");
-        //Tarea: Definir opciones restantes COMPLETO?
         System.out.println("6.- salir");
     }
     public int leerOpcion()
@@ -68,12 +67,10 @@ public class CajeroView
     {
         System.out.println("====== " + mensaje);
     }
-    public boolean salir()
+    public void salir()
     {
         mostrarMensaje("Tenga un Buen dia");
         scanner.close();
-        return false;
+        System.exit(0);
     }
-    //Tarea personalizar mensajes de error y de exito COMPLETO?
-    //Tarea metodo para salir y cerrar el scanner COMPLETO
 }
