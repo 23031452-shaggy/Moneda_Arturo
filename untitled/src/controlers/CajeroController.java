@@ -54,6 +54,12 @@ public class CajeroController
                 case 3:
                     realizarDeposito();
                     break;
+                case 4:
+                    realizarTransferencia();
+                    break;
+                case 5:
+                    //Cambiar NIP
+                    break;
                 case 9:
                     break;
                 default:
@@ -85,7 +91,7 @@ public class CajeroController
     }
     public void realizarDeposito()
     {
-        double cantidad = view.solicitarCantidad("Deposito");
+        double cantidad = view.solicitarCantidad("Deposito ");
         if(cantidad <= 0)
         {
             view.mostrarMensaje("Error en la cantidad");
@@ -98,6 +104,24 @@ public class CajeroController
         else
         {
             view.mostrarMensaje("Error en el proceso de deposito");
+        }
+    }
+    public void realizarTransferencia()
+    {
+        double cantidad = view.solicitarCantidad("Transferir ");
+        String numeroCuenta = view.solicitarNumeroCuenta();
+        if(cantidad <= 0)
+        {
+            view.mostrarMensaje("Error en la cantidad");
+            return;
+        }
+        if(model.transferir(cantidad, numeroCuenta))
+        {
+            view.mostrarMensaje("transferencia realizada con exito ");
+        }
+        else
+        {
+            view.mostrarMensaje("Error en el proceso de transferencia");
         }
     }
 }

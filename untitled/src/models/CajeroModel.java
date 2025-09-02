@@ -1,4 +1,5 @@
 package models;
+
 import java.util.HashMap;
 import java.util.Map;
 public class CajeroModel
@@ -51,14 +52,16 @@ public class CajeroModel
     {
         return cuentas.containsKey(numeroCuenta);
     }
-    public void transferir(double cantidad, String numCuenta)
+    public boolean transferir(double cantidad, String numCuenta)
     {
         if(cuentaExistente(numCuenta))
         {
             Cuenta cuenta = cuentas.get(numCuenta);
             cuentaActual.transferir(cantidad);
             cuenta.depositar(cantidad);
+            return true;
         }
+        return false;
     }
     public void CambiarNIP(String Nuevo)
     {

@@ -31,10 +31,9 @@ public class CajeroView
         System.out.println("2.- Retirar");
         System.out.println("3.- Depositar");
         System.out.println("4.- Transferir");
-        System.out.println("5.- Historial de movimientos");
-        System.out.println("6.- Cambiar NIP");
+        System.out.println("5.- Cambiar NIP");
         //Tarea: Definir opciones restantes COMPLETO?
-        System.out.println("9.- salir");
+        System.out.println("6.- salir");
     }
     public int leerOpcion()
     {
