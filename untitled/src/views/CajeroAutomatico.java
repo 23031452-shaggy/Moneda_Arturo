@@ -1,8 +1,6 @@
 package views;
-
 import controlers.CajeroController;
 import models.CajeroModel;
-
 public class CajeroAutomatico
 {
     public static void main(String[] args)
@@ -13,4 +11,3 @@ public class CajeroAutomatico
         controller.iniciarSistema();
     }
 }
-//TAREA: Investigar que es JavaDOC, como utilizarlo y aplicarlo en este codigo
