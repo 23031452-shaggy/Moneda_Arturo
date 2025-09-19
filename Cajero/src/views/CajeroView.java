@@ -55,6 +55,8 @@ public class CajeroView
         System.out.println("4.- Transferir");
         System.out.println("5.- Cambiar NIP");
         System.out.println("6.- salir");
+        System.out.println("7.- Consultar saldo con Strategy");
+        System.out.println("8.- Realizar retiro con Strategy");
     }
     /**
      * Lee la opción seleccionada por el usuario desde la consola.

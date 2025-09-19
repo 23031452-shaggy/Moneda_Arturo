@@ -1,5 +1,7 @@
 package controlers;
-
+import strategies.ConsultarSaldoStrategy;
+import strategies.RealizarRetiroStrategy;
+import strategies.Strategy;
 import models.CajeroModel;
 import views.CajeroView;
 /**
@@ -85,6 +87,11 @@ public class CajeroController
                 case 6:
                     salir();
                     break;
+                case 7:
+                    ejecutarOperacion(new ConsultarSaldoStrategy());
+                    break;
+                case 8:
+                    ejecutarOperacion(new RealizarRetiroStrategy());
                 default:
                     break;
             }
@@ -172,5 +179,8 @@ public class CajeroController
     public void cambiarNIP()
     {
         model.CambiarNIP(view.solicitarPin());
+    }
+    public void ejecutarOperacion(Strategy strategy) {
+        strategy.ejecutar(model, view);
     }
 }
