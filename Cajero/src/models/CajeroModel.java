@@ -25,8 +25,21 @@ public class CajeroModel
      */
     private void inicializarCuentas()
     {
-        cuentas.put("12345", new Cuenta("12345", "1111", 5000, "Pedro Perez Pereira"));
-        cuentas.put("67890", new Cuenta("67890", "1234", 3500, "Pobre Pintor Portugues"));
+        cuentas.put("12345", new CuentaBuilder()
+                .numeroCuenta("12345")
+                .pin("1111")
+                .saldo(5000)
+                .titular("Pedro Perez Pereira")
+                .cuentaActiva(true)
+                .build());
+
+        cuentas.put("67890", new CuentaBuilder()
+                .numeroCuenta("67890")
+                .pin("1234")
+                .saldo(3500)
+                .titular("Pobre Pintor Portugues")
+                .permiteTransferencias(true)
+                .build());
         cuentas.put("09876", new Cuenta("09876", "5678", 7350, "Pinta Preciosos Paisajes"));
     }
     /**

@@ -3,6 +3,8 @@ package models;
  * @author Arturo
  */
 public class Cuenta {
+    private boolean cuentaActiva = true;
+    private boolean permiteTransferencias = true;
     /** Número de cuenta bancaria. */
     private String numeroCuenta;
 
@@ -27,6 +29,19 @@ public class Cuenta {
         this.pin = pin;
         this.saldo = saldoInicial;
         this.titular = titular;
+    }
+    public void setCuentaActiva(boolean cuentaActiva) {
+        this.cuentaActiva = cuentaActiva;
+    }
+
+    public void setPermiteTransferencias(boolean permiteTransferencias) {
+        this.permiteTransferencias = permiteTransferencias;
+    }
+    public boolean getCuentaActiva() {
+        return cuentaActiva;
+    }
+    public boolean getPermiteTransferencias() {
+        return permiteTransferencias;
     }
 
     /**
@@ -107,6 +122,7 @@ public class Cuenta {
     public boolean transferir(double cantidad)
     {
         return retirar(cantidad);
+
     }
     /**
      * Cambia el NIP (PIN) de la cuenta.
