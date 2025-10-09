@@ -1,4 +1,5 @@
 package models;
+import java.security.MessageDigest;
 /**
  * @author Arturo
  */
