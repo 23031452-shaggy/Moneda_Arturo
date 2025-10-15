@@ -14,7 +14,7 @@ public class App extends Application {
     public void start(Stage primaryStage) throws Exception {
         this.stage = primaryStage;
         controller = new UserController();
-        VentanaLogin();
+        VentanaSeleccion();
     }
 
     public void VentanaLogin() {
@@ -23,7 +23,13 @@ public class App extends Application {
         stage.setTitle("Login");
         stage.show();
     }
-
+    public void VentanaSeleccion()
+    {
+        SeleccionView seleccionView = new SeleccionView(this);
+        stage.setScene(new Scene(seleccionView.getRoot(),400,250));
+        stage.setTitle("Seleccionar Interfaz");
+        stage.show();
+    }
     public void VentanaRegistro() {
         RegistroView registroView = new RegistroView(this, controller);
         stage.setScene(new Scene(registroView.getRoot(), 500, 400));

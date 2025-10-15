@@ -6,6 +6,8 @@ import javafx.geometry.Insets;
 import javafx.scene.control.*;
 import javafx.scene.layout.GridPane;
 
+import java.sql.SQLException;
+
 public class LoginView {
     private final GridPane root;
 
@@ -23,6 +25,7 @@ public class LoginView {
 
         Button btnLogin = new Button("Iniciar sesión");
         Button btnRegister = new Button("Registrarse");
+        Button btnCambio = new Button("VISTA CONSOLA");
         Label lblMsg = new Label();
 
         root.add(lblUser, 0, 0); root.add(tfUser, 1, 0);
@@ -30,7 +33,16 @@ public class LoginView {
         root.add(btnLogin, 0, 2);
         root.add(btnRegister, 1, 2);
         root.add(lblMsg, 0, 3, 2, 1);
-
+        root.add(btnCambio,0,3);
+        btnCambio.setOnAction(e ->
+        {
+            try {
+                UserController UC = new UserController();
+                UC.IniciarSistemaConsola();
+            } catch (SQLException ex) {
+                throw new RuntimeException(ex);
+            }
+        });
         btnLogin.setOnAction(e -> {
             try {
                 String dato = tfUser.getText().trim();
