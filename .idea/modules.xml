@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/Cajero/Cajero.iml" filepath="$PROJECT_DIR$/Cajero/Cajero.iml" />
       <module fileurl="file://$PROJECT_DIR$/DAOV1/DAOV1.iml" filepath="$PROJECT_DIR$/DAOV1/DAOV1.iml" />
       <module fileurl="file://$PROJECT_DIR$/DAOV2/DAOV2.iml" filepath="$PROJECT_DIR$/DAOV2/DAOV2.iml" />
+      <module fileurl="file://$PROJECT_DIR$/DECORATOR PIZZA/DECORATOR PIZZA.iml" filepath="$PROJECT_DIR$/DECORATOR PIZZA/DECORATOR PIZZA.iml" />
       <module fileurl="file://$PROJECT_DIR$/EjemploStrategy/EjemploStrategy.iml" filepath="$PROJECT_DIR$/EjemploStrategy/EjemploStrategy.iml" />
       <module fileurl="file://$PROJECT_DIR$/Espiral/Espiral.iml" filepath="$PROJECT_DIR$/Espiral/Espiral.iml" />
       <module fileurl="file://$PROJECT_DIR$/Figuras/Figuras.iml" filepath="$PROJECT_DIR$/Figuras/Figuras.iml" />
@@ -12,6 +13,7 @@
       <module fileurl="file://$PROJECT_DIR$/IWHBYD/IWHBYD.iml" filepath="$PROJECT_DIR$/IWHBYD/IWHBYD.iml" />
       <module fileurl="file://$PROJECT_DIR$/JAVACRYPTO/JAVACRYPTO.iml" filepath="$PROJECT_DIR$/JAVACRYPTO/JAVACRYPTO.iml" />
       <module fileurl="file://$PROJECT_DIR$/Patron Builder/Patron Builder.iml" filepath="$PROJECT_DIR$/Patron Builder/Patron Builder.iml" />
+      <module fileurl="file://$PROJECT_DIR$/RepositoryDecorator/RepositoryDecorator.iml" filepath="$PROJECT_DIR$/RepositoryDecorator/RepositoryDecorator.iml" />
       <module fileurl="file://$PROJECT_DIR$/Singleton/Singleton.iml" filepath="$PROJECT_DIR$/Singleton/Singleton.iml" />
       <module fileurl="file://$PROJECT_DIR$/.idea/TAPGIT.iml" filepath="$PROJECT_DIR$/.idea/TAPGIT.iml" />
       <module fileurl="file://$PROJECT_DIR$/Vehiculos/Vehiculos.iml" filepath="$PROJECT_DIR$/Vehiculos/Vehiculos.iml" />
